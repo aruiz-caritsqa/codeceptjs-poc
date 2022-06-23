@@ -1,0 +1,34 @@
+{
+  "name": "fe-test-suite",
+  "version": "0.0.1",
+  "description": "Test suite for the front-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/.bin/codeceptjs run-workers --suites 4 --config codecept.conf.js --verbose",
+    "debug": "node --inspect ./node_modules/.bin/codeceptjs run --config codecept.conf.js --steps --verbose",
+    "test-bs": "node ./node_modules/.bin/codeceptjs run --config browserstack.conf.js",
+    "allure-view": "./node_modules/.bin/allure serve",
+    "allure-html": "./node_modules/.bin/allure generate"
+  },
+  "author": "Adrien Ruiz Gauder",
+  "license": "ISC",
+  "dependencies": {
+    "@axe-core/webdriverio": "^4.4.2",
+    "axe-html-reporter": "^2.2.3",
+    "be-test-data": "file:../be-test-data",
+    "codeceptjs": "^3.3.0",
+    "fe-test-data": "file:../fe-test-data",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@wdio/browserstack-service": "^7.19.5",
+    "allure-commandline": "^2.17.2",
+    "chromedriver": "^100.0.0",
+    "geckodriver": "^3.0.1",
+    "puppeteer": "^13.6.0",
+    "wdio-chromedriver-service": "^7.3.2",
+    "wdio-geckodriver-service": "^2.1.0",
+    "wdio-safaridriver-service": "^1.0.0",
+    "webdriverio": "^7.19.5"
+  }
+}
